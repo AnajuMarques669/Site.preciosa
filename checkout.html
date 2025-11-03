@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Preciosa Joias</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Ajustes para a tabela do checkout */
+    #cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    #cart-table th, #cart-table td {
+      padding: 0.8rem;
+      text-align: center;
+      border-bottom: 1px solid #ffd700;
+    }
+    #cart-table th {
+      background: linear-gradient(90deg,#ff66b2,#ffd700);
+      color: white;
+      border-radius: 8px 8px 0 0;
+    }
+    .qty {width:60px; padding:0.3rem; text-align:center;}
+    .remove-item {background:#ff3399; color:white; border:none; padding:0.4rem 0.8rem; border-radius:6px; cursor:pointer; transition:0.3s;}
+    .remove-item:hover {background:#ff66b2;}
+    #cart-total {font-size:1.2rem; text-align:right; margin-bottom:1.5rem;}
+    @media(max-width:768px){
+      #cart-table th, #cart-table td {font-size:0.9rem; padding:0.5rem;}
+      .qty {width:45px;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Preciosa <span>Joias</span></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="produtos.html" class="active">Produtos</a></li>
+    <li><a href="sobre.html">Sobre Nós</a></li>
+    <li><a href="contato.html">Contato</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</header>
+
+<section class="banner">
+  <div class="banner-content">
+    <h1>Finalize sua compra</h1>
+    <p>Confira os detalhes antes de concluir seu pedido</p>
+  </div>
+</section>
+
+<section class="checkout">
+  <h2>Resumo do Pedido</h2>
+
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Preço (R$)</th>
+        <th>Quantidade</th>
+        <th>Total (R$)</th>
+        <th>Remover</th>
+      </tr>
+    </thead>
+    <tbody id="cart-body">
+      <!-- Produtos adicionados pelo JS -->
+    </tbody>
+  </table>
+
+  <p id="cart-total"><strong>Total: R$ 0.00</strong></p>
+
+  <form id="checkout-form">
+    <h2>Informações de Entrega</h2>
+    <input type="text" placeholder="Nome Completo" required>
+    <input type="text" placeholder="Endereço" required>
+    <input type="text" placeholder="Cidade" required>
+    <input type="text" placeholder="CEP" required>
+    <input type="tel" placeholder="Telefone" required>
+
+    <h2>Método de Pagamento</h2>
+    <label><input type="radio" name="pagamento" value="cartao" checked> Cartão de Crédito</label>
+    <label><input type="radio" name="pagamento" value="boleto"> Boleto Bancário</label>
+    <label><input type="radio" name="pagamento" value="pix"> PIX</label>
+
+    <button type="submit">Finalizar Compra</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Preciosa Joias. Todos os direitos reservados.
+</footer>
+
+<script>
+  // Puxa o carrinho do localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  const cartBody = document.getElementById('cart-body');
+  const cartTotal = document.getElementById('cart-total');
+
+  function renderCart() {
+    cartBody.innerHTML = '';
+    cart.forEach((item, index) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.price.toFixed(2)}</td>
+        <td><input type="number" class="qty" min="1" value="${item.qty}"></td>
+        <td class="total-item">${(item.price * item.qty).toFixed(2)}</td>
+        <td><button class="remove-item">X</button></td>
+      `;
+      cartBody.appendChild(row);
+
+      // Atualiza quantidade automaticamente
+      row.querySelector('.qty').addEventListener('input', (e) => {
+        const value = parseInt(e.target.value);
+        cart[index].qty = value > 0 ? value : 1;
+        updateTotal();
+        saveCart();
+      });
+
+      // Remove item
+      row.querySelector('.remove-item').addEventListener('click', () => {
+        cart.splice(index,1);
+        renderCart();
+        saveCart();
+      });
+    });
+    updateTotal();
+  }
+
+  function updateTotal() {
+    let total = cart.reduce((acc,item) => acc + item.price * item.qty, 0);
+    cartTotal.innerHTML = '<strong>Total: R$ ' + total.toFixed(2) + '</strong>';
+  }
+
+  function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  document.getElementById('checkout-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(cart.length === 0) {
+      alert('Seu carrinho está vazio!');
+      return;
+    }
+    alert('Compra finalizada com sucesso! 💖 Total: ' + document.querySelector('#cart-total strong').textContent);
+    cart = [];
+    saveCart();
+    renderCart();
+  });
+
+  renderCart();
+</script>
+
+</body>
+</html>

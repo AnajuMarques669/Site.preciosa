@@ -1,0 +1,213 @@
+/* RESET */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif;}
+body {background:#fff0f5; color:#333; line-height:1.6;}
+
+/* NAVBAR */
+.navbar {display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; background:linear-gradient(90deg,#ff66b2,#ffd700); box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.navbar .logo {color:white; font-size:1.8rem; font-weight:bold;}
+.navbar .logo span {color:#fff0f5;}
+.nav-links {list-style:none; display:flex; gap:1.5rem;}
+.nav-links li a {text-decoration:none; color:white; font-weight:bold; padding:0.5rem 1rem; border-radius:8px; transition:0.3s;}
+.nav-links li a:hover, .nav-links li a.active {background:white; color:#ff66b2;}
+
+/* HERO */
+.hero {text-align:center; padding:4rem 2rem; background:linear-gradient(120deg,#ff66b2,#ffd700); color:white;}
+.hero h2 {font-size:2.5rem; margin-bottom:1rem;}
+.hero p {font-size:1.2rem; margin-bottom:2rem;}
+.hero .btn {background:white; color:#ff66b2; padding:1rem 2rem; border-radius:12px; text-decoration:none; font-weight:bold; transition:0.3s;}
+.hero .btn:hover {background:#fff0f5; transform:scale(1.05);}
+
+/* PRODUTOS GRID */
+.produtos-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; padding:2rem;}
+.produto {background:white; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.2); padding:1rem; cursor:pointer; transition:0.3s;}
+.produto:hover {transform:translateY(-5px) scale(1.02);}
+.produto img {border-radius:12px; object-fit:cover; width:100%; height:220px;}
+.produto h3 {color:#ff3399; margin:0.5rem 0; text-align:center;}
+.produto p {color:#555; text-align:center; font-size:0.95rem;}
+.produto button {display:block; margin:0.5rem auto; background:#ff66b2; color:white; border:none; padding:0.6rem 1.2rem; border-radius:8px; font-weight:bold; transition:0.3s;}
+.produto button:hover {background:#ff3399; transform:scale(1.05);}
+
+/* Categorias */
+.categorias {padding:2rem; max-width:1000px; margin:0 auto; text-align:center;}
+.categorias-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; margin-top:1rem;}
+.categoria-card {background:white; border-radius:15px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.2); cursor:pointer; transition:0.3s;}
+.categoria-card img {width:100%; height:180px; object-fit:cover; transition:transform 0.3s;}
+.categoria-card h3 {padding:1rem 0; color:#ff3399;}
+.categoria-card:hover img {transform:scale(1.05);}
+.categoria-card:hover {transform:translateY(-5px);}
+
+
+/* MODAL PRODUTO */
+.modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;}
+.modal-content {max-width:500px; border-radius:15px; padding:2rem; text-align:center; background:white; position:relative;}
+.modal-content img {width:100%; border-radius:12px; margin-bottom:1rem;}
+.modal-content h3 {color:#ff3399; margin-bottom:0.5rem;}
+.modal-content p {color:#555; margin-bottom:1rem;}
+.modal-content button {background:#ffd700; color:#ff3399; padding:0.6rem 1.2rem; border:none; border-radius:8px; font-weight:bold;}
+.modal-content button:hover {background:#ffcc00; transform:scale(1.05);}
+.close-modal {position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:#ff3399; font-weight:bold;}
+
+.produtos-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; padding:2rem;}
+.produto {background:white; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.2); padding:1rem; cursor:pointer; transition:0.3s;}
+.produto:hover {transform:translateY(-5px) scale(1.02);}
+.produto img {border-radius:12px; object-fit:cover; width:100%; height:220px;}
+.produto h3 {color:#ff3399; margin:0.5rem 0; text-align:center;}
+.produto p {color:#555; text-align:center; font-size:0.95rem;}
+.produto button {display:block; margin:0.5rem auto; background:#ff66b2; color:white; border:none; padding:0.6rem 1.2rem; border-radius:8px; font-weight:bold; transition:0.3s;}
+.produto button:hover {background:#ff3399; transform:scale(1.05);}
+
+/* Modal Produto */
+.modal {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;}
+.modal-content {max-width:500px; border-radius:15px; padding:2rem; text-align:center; background:white; position:relative;}
+.modal-content img {width:100%; border-radius:12px; margin-bottom:1rem;}
+.modal-content h3 {color:#ff3399; margin-bottom:0.5rem;}
+.modal-content p {color:#555; margin-bottom:1rem;}
+.modal-content button {background:#ffd700; color:#ff3399; padding:0.6rem 1.2rem; border:none; border-radius:8px; font-weight:bold;}
+.modal-content button:hover {background:#ffcc00; transform:scale(1.05);}
+.close-modal {position:absolute; top:10px; right:15px; font-size:1.5rem; cursor:pointer; color:#ff3399; font-weight:bold;}
+/* Banner */
+.banner {
+  background: linear-gradient(rgba(255, 192, 203,0.7), rgba(255, 223, 0,0.6)), url('../imagens/banner.jpg') center/cover no-repeat;
+  height: 90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  text-align:center;
+  border-radius:15px;
+  margin:1rem;
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.banner-content h1 {
+  font-size:3rem;
+  color:#ff3399;
+  margin-bottom:1rem;
+}
+
+.banner-content span {color:#ffd700;}
+.banner-content p {font-size:1.2rem; margin-bottom:1.5rem;}
+.btn-banner {
+  padding:0.8rem 2rem;
+  background:#ff66b2;
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:10px;
+  transition:0.3s;
+}
+.btn-banner:hover {background:#ff3399; transform:scale(1.05);}
+
+/* Produtos grid */
+.produtos-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; padding:2rem;}
+.produto {background:white; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.2); padding:1rem; text-align:center;}
+.produto img {border-radius:12px; width:100%; height:220px; object-fit:cover; cursor:pointer;}
+.produto h3 {color:#ff3399; margin:0.5rem 0;}
+.produto p {color:#555; margin-bottom:0.5rem;}
+.produto button {background:#ff66b2; color:white; border:none; padding:0.6rem 1.2rem; border-radius:8px; font-weight:bold; cursor:pointer;}
+.produto button:hover {background:#ff3399; transform:scale(1.05);}
+
+.p1 {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.p2 {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+/* Info extra */
+.info-extra {max-width:800px; margin:2rem auto; background:#fff0f5; padding:1.5rem; border-radius:12px; text-align:center; box-shadow:0 6px 15px rgba(0,0,0,0.1);}
+.info-extra h3 {color:#ff3399; margin-bottom:0.5rem;}
+.info-extra p {color:#555; line-height:1.5;}
+.cadastro-container{
+    max-width:400px;
+    margin:3rem auto;
+    padding:2rem;
+    background:#fff0f5;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+.cadastro-container h2{
+    color:#ff3399;
+    margin-bottom:1.5rem;
+}
+
+.form-cadastro input{
+    width:100%;
+    padding:0.8rem;
+    margin:0.5rem 0;
+    border:1px solid #ffd700;
+    border-radius:8px;
+    font-size:1rem;
+}
+
+.form-cadastro button{
+    width:100%;
+    padding:0.8rem;
+    background:#ff66b2;
+    color:#fff;
+    border:none;
+    border-radius:10px;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-cadastro button:hover{
+    background:#ff3399;
+    transform:scale(1.05);
+}
+
+.form-cadastro p{
+    margin-top:1rem;
+    color:#555;
+}
+
+.form-cadastro a{
+    color:#ff3399;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* SOBRE NÓS */
+.sobre-nos {padding:2rem; max-width:900px; margin:0 auto;}
+.dona-container {display:flex; gap:2rem; align-items:center; margin:2rem 0; flex-wrap:wrap;}
+.dona-img {width:250px; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.2);}
+.dona-desc {max-width:600px;}
+.dona-desc h4 {color:#ff3399; font-size:1.5rem; margin-bottom:0.5rem;}
+.dona-desc p {font-size:1rem; color:#555; line-height:1.5;}
+
+/* CONTATO */
+.contato {padding:2rem; max-width:800px; margin:0 auto; text-align:center;}
+.contato form {display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;}
+.contato input, .contato textarea {padding:0.8rem; border-radius:8px; border:1px solid #ccc; font-size:1rem; resize:none;}
+.contato button {background:#ff66b2; color:white; padding:1rem; border:none; border-radius:10px; font-weight:bold; transition:0.3s;}
+.contato button:hover {background:#ff3399; transform:scale(1.05);}
+.info-contato {background:#fff0f5; padding:1.5rem; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.1); margin-top:1rem; text-align:left;}
+.info-contato h3 {color:#ff3399; margin-bottom:0.5rem;}
+
+/* LOGIN E CHECKOUT */
+.login-form-container, .checkout {padding:2rem; max-width:500px; margin:2rem auto; background:white; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.login-form-container h2, .checkout h2 {color:#ff3399; margin-bottom:1rem; text-align:center;}
+.login-form-container input, .checkout input, .checkout select {padding:0.8rem; margin-bottom:1rem; border-radius:8px; border:1px solid #ccc; width:100%;}
+.login-form-container button, .checkout button {background:#ff66b2; color:white; padding:0.8rem; border:none; border-radius:10px; width:100%; font-weight:bold; transition:0.3s;}
+.login-form-container button:hover, .checkout button:hover {background:#ff3399; transform:scale(1.05);}
+.login-form-container p {margin-top:1rem; text-align:center; color:#555;}
+.login-form-container a {color:#ff66b2; text-decoration:none; font-weight:bold;}
+.login-form-container a:hover {color:#ff3399;}
+
+/* NEWSLETTER */
+.newsletter {text-align:center; padding:2rem; background:#fff0f5;}
+.newsletter input {padding:0.8rem; width:250px; border-radius:8px; border:1px solid #ccc; margin-right:1rem;}
+.newsletter button {background:#ff66b2; color:white; padding:0.8rem 1.5rem; border:none; border-radius:8px; font-weight:bold;}
+.newsletter button:hover {background:#ff3399; transform:scale(1.05);}
+
+/* FOOTER */
+footer {background:#ff66b2; color:white; text-align:center; padding:1rem; margin-top:2rem; border-top-left-radius:15px; border-top-right-radius:15px;}

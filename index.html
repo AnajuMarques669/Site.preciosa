@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preciosa - Home</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/script.js"></script>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<h1 class="logo">Preciosa</h1>
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="produtos.html">Produtos</a></li>
+<li><a href="sobre.html">Sobre Nós</a></li>
+<li><a href="contato.html">Contato</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="checkout.html">Carrinho 🛒</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- Banner Home -->
+<section class="banner">
+  <div class="banner-content">
+    <h1>Preciosa <span>Acessórios</span></h1>
+    <p>Descubra a beleza das joias exclusivas que encantam todos os momentos</p>
+    <a href="produtos.html" class="btn-banner">Ver Produtos</a>
+  </div>
+</section>
+
+<!-- Produtos em destaque -->
+<section class="produtos-destaque">
+     <h2 class="p1">Produtos em Destaque</h2>
+     <p class="p2">Confira algumas de nossas joias mais vendidas!</p>
+</div>
+
+<div class="produtos-grid">
+  <div class="produto">
+    <img src="imagens/anel.jpg" alt="Anel de Ouro">
+    <h3>Anel de Ouro</h3>
+    <p>R$ 250</p>
+    <button onclick="adicionarCarrinho(0)">Adicionar ao Carrinho</button>
+  </div>
+  <div class="produto">
+    <img src="imagens/colar.jpg" alt="Colar Rosa">
+    <h3>Colar Rosa</h3>
+    <p>R$ 180</p>
+    <button onclick="adicionarCarrinho(1)">Adicionar ao Carrinho</button>
+  </div>
+  <div class="produto">
+    <img src="imagens/brinco.jpg" alt="Brincos Luxo">
+    <h3>Brincos Luxo</h3>
+    <p>R$ 150</p>
+    <button onclick="adicionarCarrinho(2)">Adicionar ao Carrinho</button>
+  </div>
+</div>
+</section>
+
+<!-- Informações extras -->
+<section class="info-extra">
+<h3>Garantia e Frete</h3>
+<p>Todos os nossos produtos possuem garantia de qualidade e certificados de autenticidade. Frete rápido e seguro para todo o Brasil.</p>
+</section>
+
+<footer>
+<p>© 2025 Preciosa Acessórios - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

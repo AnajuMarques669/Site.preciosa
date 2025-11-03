@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preciosa Acessórios - Produtos</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/script.js"></script>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<h1 class="logo">Preciosa</h1>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="produtos.html" class="active">Produtos</a></li>
+<li><a href="sobre.html">Sobre Nós</a></li>
+<li><a href="contato.html">Contato</a></li>
+<li><a href="login.html">Login</a></li>
+<li><a href="checkout.html">Carrinho 🛒</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="produtos">
+<h2 class="p1">Nossos Produtos</h2>
+<p class="p2">Explore nossa coleção exclusiva de joias finas, cada peça feita com amor e atenção aos detalhes.</p>
+
+<div class="produtos-grid">
+  <div class="produto">
+    <img src="img/colar-argolap.jpg" alt="Brinco argola P">
+    <h3>Brinco Argola Pequena</h3>
+    <p>R$ 00,00</p>
+    <button onclick="adicionarCarrinho(0)">Adicionar ao Carrinho</button>
+  </div>
+  <div class="produto">
+    <img src="img/kit-argolas.jpg" alt="kit-argolas">
+    <h3>Kit 3 Brincos Argolas</h3>
+    <p>R$ 00,00</p>
+    <button onclick="adicionarCarrinho(1)">Adicionar ao Carrinho</button>
+  </div>
+  <div class="produto">
+    <img src="img/argolaM-dourada.jpg" alt="AgolaM-dourada">
+    <h3>Brinco Argola Dourada</h3>
+    <p>R$ 00.00</p>
+    <button onclick="adicionarCarrinho(2)">Adicionar ao Carrinho</button>
+  </div>
+  <div class="produto">
+    <img src="img/kitargola-coracao.jpg" alt="Kit argola coracao">
+    <h3>Kit Argola Coração Dourada</h3>
+    <p>R$ 00,00</p>
+    <button onclick="adicionarCarrinho(3)">Adicionar ao Carrinho</button>
+  </div>
+  <div class="produto">
+    <img src="img/kitargolacravejada-dourada.jpg" alt="kit-argolas cravejadas dourada">
+    <h3>Kit Argolas Cravejadas Douradas </h3>
+    <p>R$ 00,00</p>
+    <button onclick="adicionarCarrinho(4)">Adicionar ao Carrinho</button>
+  </div>
+</div>
+</section>
+
+<!-- Modal Produto -->
+<div class="modal" id="modal-produto">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<img src="" alt="">
+<h3>Nome do Produto</h3>
+<p>Descrição do Produto</p>
+<button>Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<footer>
+<p>© 2025 Preciosa Acessórios - Todos os direitos reservados.</p>
+</footer>
+</main>
+</body>
+</html>
